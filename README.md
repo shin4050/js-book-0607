@@ -85,7 +85,37 @@ undefined
 - （p.89 Columnは記入不要（以下も同様））
 
 ```
-【ここにConsoleログを記入】
+total;
+VM178:1 Uncaught ReferenceError: total is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM178:1
+sum(2,5);
+undefined
+14
+total;
+VM200:1 Uncaught ReferenceError: total is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM200:1
+var hoge = 5;
+function testScope(){
+	window.alert(hoge);
+}
+undefined
+testScope();
+undefined
+5
+function sum(rangeFrom, rangeTo){
+	let total = 0;
+	for (let counter = rangeFrom; counter <= rangeTo; counter++){
+		total += counter;
+    }
+	window.alert(counter);
+}
+undefined
+sum(1,10);
+VM446:6 Uncaught ReferenceError: counter is not defined
+    at sum (<anonymous>:6:15)
+    at <anonymous>:1:1
 ```
 
 ### 4-2-4 返り値 (p.88 中央)
@@ -97,7 +127,23 @@ undefined
 - ログをコピーして、下記に貼り付ける
 
 ```
-【ここにConsoleログを記入】
+var total = 0;
+function sum(rangeFrom, rangeTo){
+    for (var counter = rangeFrom; counter <= rangeTo; counter++){
+		total += counter;
+    }
+}
+undefined
+sum(1,10);
+undefined
+window.alert(total);
+undefined
+55
+sum(1,10);
+undefined
+window.alert(total);
+undefined
+110
 ```
 
 ### 4-3-1 配列の作り方 (p.95)
